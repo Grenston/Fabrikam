@@ -39,6 +39,14 @@ jobs:
         echo $PWD
         echo $GITHUB_WORKSPACE
         ls
+  deployjob:
+    needs: buildingjob
+    runs-on: self-hosted
+    steps:
+      - name: testing runner
+        run: |
+          cd C:\tomcat
+          mkdir TestFolder
    # - name: Publish Artifacts
     #  uses: actions/upload-artifact@v1.0.0
      # with:
