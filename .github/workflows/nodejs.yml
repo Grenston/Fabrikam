@@ -8,7 +8,7 @@ on:
 jobs:
   buildingjob:
     name: Build Job
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
 
     steps:
@@ -33,12 +33,6 @@ jobs:
       run: |
         npm run build --if-present
         npm prune --production
-   
-    - name: Temporary action which will be removed later 
-      run : |
-        echo $PWD
-        echo $GITHUB_WORKSPACE
-        ls
   deployjob:
     needs: buildingjob
     runs-on: self-hosted
