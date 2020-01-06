@@ -21,7 +21,7 @@ jobs:
             dotnet build extensions.csproj --output ./bin
            fi
       
-    - name: Use Node.js 12.x
+    - name: Use Node.js 10.14.1
       uses: actions/setup-node@v1
       with:
         node-version: '10.14.1'
