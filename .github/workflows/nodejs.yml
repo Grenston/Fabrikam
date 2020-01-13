@@ -16,6 +16,7 @@ jobs:
     
     - name: 'Build extentions'
       run: |
+           echo Hello
            if [ -f extensions.csproj ]
            then
             dotnet build extensions.csproj --output ./bin
