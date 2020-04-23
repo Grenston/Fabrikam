@@ -25,8 +25,6 @@ steps:
     command: 'install'
     workingDir: '$(System.DefaultWorkingDirectory)'
     verbose: false
-    customRegistry: 'useFeed'
-    customFeed: 'ad9da352-d1c6-46fa-a16f-ca63a74b89cd/469dddb7-69dc-4cff-b91a-6607e902e206'
 
 - task: Npm@1
   displayName: 'Run ''build'' script'
@@ -34,8 +32,6 @@ steps:
     command: 'custom'
     workingDir: '$(System.DefaultWorkingDirectory)'
     customCommand: 'run build --if-present'
-    customRegistry: 'useFeed'
-    customFeed: 'ad9da352-d1c6-46fa-a16f-ca63a74b89cd/469dddb7-69dc-4cff-b91a-6607e902e206'
 
 - task: Npm@1
   displayName: 'Remove extraneous packages'
@@ -43,8 +39,6 @@ steps:
     command: 'custom'
     workingDir: '$(System.DefaultWorkingDirectory)'
     customCommand: 'prune --production'
-    customRegistry: 'useFeed'
-    customFeed: 'ad9da352-d1c6-46fa-a16f-ca63a74b89cd/469dddb7-69dc-4cff-b91a-6607e902e206'
 
 - task: CopyFiles@2
   inputs:
